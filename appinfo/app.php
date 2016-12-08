@@ -27,6 +27,6 @@ if($user) {
     $userID = $user->getUID();
 }
 
-if (\OCP\App::isEnabled("firstrunwizard") && $userSession->isLoggedIn() && $config->getUserValue($userID, "teacher_notification", "notification", null) == "1" && $config->getUserValue($userID, "firstrunwizard", "show", null) != "1") {
+if (\OCP\App::isEnabled("firstrunwizard") && $userSession->isLoggedIn() && $config->getUserValue($userID, "teacher_notification", "notification", null) === "1" && $config->getUserValue($userID, "firstrunwizard", "show", null) === "0") {
 	Util::addScript( 'teacher_notification', 'active');
 }
