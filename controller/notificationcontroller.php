@@ -45,8 +45,8 @@ class NotificationController extends Controller {
         $result = array();
         $value = $value == "false" ? "0" : "1";
 
-        $this->config->setUserValue($this->userId, $this->AppName, "notification",$value);
-        $result["success"] = $this->config->getUserValue($thsi->UserId, $this->appName, "notification") == $value ? true : false;
+        $this->config->setUserValue($this->userId, $this->AppName, "notification", $value);
+        $result["success"] = $this->config->getUserValue($this->userId, $this->appName, "notification") == $value ? true : false;
         return new JSONResponse($result);
     }
     
